@@ -1,0 +1,11 @@
+version: '2'
+services:
+  radwords-postgresql:
+    image: postgres:11.5
+    # volumes:
+    #     - ~/volumes/jhipster/radwords/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=radwords
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
