@@ -94,3 +94,26 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [running tests page]: https://www.jhipster.tech/documentation-archive/vundefined/running-tests/
 [code quality page]: https://www.jhipster.tech/documentation-archive/vundefined/code-quality/
 [setting up continuous integration]: https://www.jhipster.tech/documentation-archive/vundefined/setting-up-ci/
+
+
+## JHipster Generation
+
+npm install -g generator-jhipster
+npm install -g generator-jhipster-vuejs
+jhipster --blueprint vuejs
+? Which *type* of application would you like to create? Microservice application
+? What is the base name of your application? radwords
+? As you are running in a microservice architecture, on which port would like your server to run? It should be unique to avoid port conflicts. 8081
+? What is your default Java package name? com.aaron.radwords
+? Which service discovery server do you want to use? No service discovery
+? Which *type* of authentication would you like to use? JWT authentication (stateless, with a token)
+? Which *type* of database would you like to use? SQL (H2, MySQL, MariaDB, PostgreSQL, Oracle, MSSQL)
+? Which *production* database would you like to use? PostgreSQL
+? Which *development* database would you like to use? PostgreSQL
+? Do you want to use the Spring cache abstraction? Yes, with the Ehcache implementation (local cache, for a single node)
+? Do you want to use Hibernate 2nd level cache? Yes
+? Would you like to use Maven or Gradle for building the backend? Maven
+? Which other technologies would you like to use? Asynchronous messages using Apache Kafka
+? Would you like to enable internationalization support? No
+? Besides JUnit and Jest, which testing frameworks would you like to use? None
+? Would you like to install other generators from the JHipster Marketplace? No
