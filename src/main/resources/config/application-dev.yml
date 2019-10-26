@@ -49,7 +49,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/radwords
     username: radwords
-    password:
+    password: radwords
     hikari:
       poolName: Hikari
       auto-commit: false

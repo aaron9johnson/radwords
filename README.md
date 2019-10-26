@@ -1,4 +1,15 @@
-# radwords
+# Radwords
+
+## Run Kafka & Zookeeper
+
+docker-compose -f src/main/docker/kafka.yml up -d
+
+## Run Ingestion Service & WordCountService
+
+mvn clean package && java -jar ./target/radwords-0.0.1-SNAPSHOT.jar
+
+
+# JHipster README
 
 This application was generated using JHipster , you can find documentation and help at [https://www.jhipster.tech/documentation-archive/vundefined](https://www.jhipster.tech/documentation-archive/vundefined).
 
@@ -96,7 +107,7 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [setting up continuous integration]: https://www.jhipster.tech/documentation-archive/vundefined/setting-up-ci/
 
 
-## JHipster Generation
+# JHipster Generation
 
 npm install -g generator-jhipster
 npm install -g generator-jhipster-vuejs

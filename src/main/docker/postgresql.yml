@@ -6,6 +6,6 @@ services:
     #     - ~/volumes/jhipster/radwords/postgresql/:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=radwords
-      - POSTGRES_PASSWORD=
+      - POSTGRES_PASSWORD=radwords
     ports:
       - 5432:5432

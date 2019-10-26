@@ -1,12 +1,14 @@
 package com.aaron.radwords.service;
 
 import com.aaron.radwords.config.KafkaProperties;
+import com.aaron.radwords.web.rest.WordController;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.errors.WakeupException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
@@ -26,6 +28,9 @@ public class RadwordsKafkaConsumer {
 
     private KafkaConsumer<String, String> kafkaConsumer;
 
+    @Autowired
+    private WordService wordService;
+
     public RadwordsKafkaConsumer(KafkaProperties kafkaProperties) {
         this.kafkaProperties = kafkaProperties;
     }
@@ -43,6 +48,7 @@ public class RadwordsKafkaConsumer {
                     ConsumerRecords<String, String> records = kafkaConsumer.poll(Duration.ofSeconds(3));
                     for (ConsumerRecord<String, String> record : records) {
                         log.info("Consumed message in {} : {}", TOPIC, record.value());
+                        wordService.addWord(record.value());
                     }
                 }
                 kafkaConsumer.commitSync();
